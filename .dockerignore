@@ -1,0 +1,6 @@
+node_modules
+.next
+data/*.db
+.git
+.DS_Store
+*.tsbuildinfo
