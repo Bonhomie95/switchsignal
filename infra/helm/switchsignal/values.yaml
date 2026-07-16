@@ -1,0 +1,25 @@
+image:
+  repository: switchsignal
+  tag: local
+  pullPolicy: IfNotPresent
+
+replicaCount: 1
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+service:
+  port: 3000
+
+persistence:
+  enabled: true
+  size: 1Gi
+
+env:
+  - name: RUN_MIGRATIONS
+    value: "true"
