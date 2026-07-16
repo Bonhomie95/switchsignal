@@ -20,6 +20,9 @@ spec:
             - containerPort: 3000
           env:
             {{- toYaml .Values.env | nindent 12 }}
+          envFrom:
+            - secretRef:
+                name: switchsignal-secrets
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           readinessProbe:
